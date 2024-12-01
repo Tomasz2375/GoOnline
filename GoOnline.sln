@@ -5,13 +5,18 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{671F971F-D97E-412B-A546-67BC98EF2631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoOnline.Api", "src\GoOnline.Api\GoOnline.Api.csproj", "{D20BBE52-9021-4111-98FF-C0D60C0ABD56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Api", "src\GoOnline.Api\GoOnline.Api.csproj", "{D20BBE52-9021-4111-98FF-C0D60C0ABD56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoOnline.Domain", "src\GoOnline.Domain\GoOnline.Domain.csproj", "{277ACDB4-73A2-4BF8-A6E9-56320E3FFF5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Domain", "src\GoOnline.Domain\GoOnline.Domain.csproj", "{277ACDB4-73A2-4BF8-A6E9-56320E3FFF5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoOnline.Application", "src\GoOnline.Application\GoOnline.Application.csproj", "{A45342C6-5C83-4A4B-8EE5-4E207B6D6DEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Application", "src\GoOnline.Application\GoOnline.Application.csproj", "{A45342C6-5C83-4A4B-8EE5-4E207B6D6DEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoOnline.Infrastructure", "src\GoOnline.Infrastructure\GoOnline.Infrastructure.csproj", "{6933360A-85CE-44BF-BEBD-7A83294EDCC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Infrastructure", "src\GoOnline.Infrastructure\GoOnline.Infrastructure.csproj", "{6933360A-85CE-44BF-BEBD-7A83294EDCC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C59C5D93-9047-426D-9B1E-DE7BFCDAEA38}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
