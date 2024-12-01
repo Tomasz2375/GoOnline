@@ -9,6 +9,6 @@ internal class ToDoConfiguration : IEntityTypeConfiguration<ToDo>
     public void Configure(EntityTypeBuilder<ToDo> builder)
     {
         builder.Property(x => x.Title).IsRequired().HasMaxLength(100);
-        builder.Property(e => e.Complete).HasPrecision(3, 2);
+        builder.Property(e => e.Complete).HasPrecision(5, 2);
     }
 }
