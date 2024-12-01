@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GoOnline.Domain\GoOnline.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

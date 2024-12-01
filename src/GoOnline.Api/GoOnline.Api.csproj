@@ -14,4 +14,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GoOnline.Infrastructure\GoOnline.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
