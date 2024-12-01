@@ -1,4 +1,6 @@
+using GoOnline.Domain.Interfaces;
 using GoOnline.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+using var scope = app.Services.CreateScope();
+var dataContext = scope.ServiceProvider.GetService<IDataContext>();
+var pendingMigrations = dataContext!.Database.GetPendingMigrations();
+if (pendingMigrations.Any())
+{
+    dataContext.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
