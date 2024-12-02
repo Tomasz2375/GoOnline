@@ -9,16 +9,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoOnline.Application.Queries.ToDos.GetIncoming;
 
-public class ToDoIncomingQueryHandler : IRequestHandler<ToDoIncomingQuery, Result<List<ToDoListDto>>>
+public class ToDoIncomingQueryHandler(IDataContext dataContext, IMapper mapper) : IRequestHandler<ToDoIncomingQuery, Result<List<ToDoListDto>>>
 {
-    private readonly IDataContext dataContext;
-    private readonly IMapper mapper;
-
-    public ToDoIncomingQueryHandler(IDataContext dataContext, IMapper mapper)
-    {
-        this.dataContext = dataContext;
-        this.mapper = mapper;
-    }
+    private readonly IDataContext dataContext = dataContext;
+    private readonly IMapper mapper = mapper;
 
     public async Task<Result<List<ToDoListDto>>> Handle(ToDoIncomingQuery query, CancellationToken cancellationToken)
     {
@@ -49,7 +43,9 @@ public class ToDoIncomingQueryHandler : IRequestHandler<ToDoIncomingQuery, Resul
             case TimePeriod.Tomorrow:
                 return toDos.Where(x => x.ExpireDate.Date == DateTime.Today.AddDays(1));
             case TimePeriod.ThisWeek:
-                var maxDate = DateTime.Today.AddDays(6 - (int)DateTime.Today.DayOfWeek);
+                var maxDate = DateTime.Today.DayOfWeek == DayOfWeek.Sunday
+                    ? DateTime.Today
+                    : DateTime.Today.AddDays(7 - (int)DateTime.Today.DayOfWeek);
                 return toDos.Where(x => x.ExpireDate.Date >= DateTime.Today && x.ExpireDate.Date <= maxDate);
             case TimePeriod.ThisMonth:
                 return toDos.Where(x => x.ExpireDate.Date >= DateTime.Today && x.ExpireDate.Month == DateTime.Today.Month);

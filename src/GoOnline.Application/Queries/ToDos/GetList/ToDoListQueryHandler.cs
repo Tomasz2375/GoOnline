@@ -8,25 +8,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoOnline.Application.Queries.ToDos.GetList;
 
-public class ToDoListQueryHandler : IRequestHandler<ToDoListQuery, Result<List<ToDoListDto>>>
+public class ToDoListQueryHandler(IDataContext dataContext, IMapper mapper) : IRequestHandler<ToDoListQuery, Result<List<ToDoListDto>>>
 {
-    private readonly IDataContext dataContext;
-    private readonly IMapper mapper;
-
-    public ToDoListQueryHandler(IDataContext dataContext, IMapper mapper)
-    {
-        this.dataContext = dataContext;
-        this.mapper = mapper;
-    }
+    private readonly IDataContext dataContext = dataContext;
+    private readonly IMapper mapper = mapper;
 
     public async Task<Result<List<ToDoListDto>>> Handle(ToDoListQuery query, CancellationToken cancellationToken)
     {
         try
         {
-            var toDosQuery = dataContext.Set<ToDo>()
-                .AsNoTracking();
+            var toDos = await dataContext.Set<ToDo>()
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
 
-            var toDos = await toDosQuery.ToListAsync(cancellationToken);
             var result = mapper.Map<List<ToDoListDto>>(toDos);
 
             return Result.Ok(result);
