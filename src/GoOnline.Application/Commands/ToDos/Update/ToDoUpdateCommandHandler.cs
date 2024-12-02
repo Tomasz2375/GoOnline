@@ -7,14 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoOnline.Application.Commands.ToDos.Update;
 
-public class ToDoUpdateCommandHandler : IRequestHandler<ToDoUpdateCommand, Result>
+public class ToDoUpdateCommandHandler(IDataContext dataContext) : IRequestHandler<ToDoUpdateCommand, Result>
 {
-    private readonly IDataContext dataContext;
-
-    public ToDoUpdateCommandHandler(IDataContext dataContext)
-    {
-        this.dataContext = dataContext;
-    }
+    private readonly IDataContext dataContext = dataContext;
 
     public async Task<Result> Handle(ToDoUpdateCommand command, CancellationToken cancellationToken)
     {

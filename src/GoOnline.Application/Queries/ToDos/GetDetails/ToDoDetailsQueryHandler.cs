@@ -8,16 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoOnline.Application.Queries.ToDos.GetDetails;
 
-public class ToDoDetailsQueryHandler : IRequestHandler<ToDoDetailsQuery, Result<ToDoDetailsDto>>
+public class ToDoDetailsQueryHandler(IDataContext dataContext, IMapper mapper) : IRequestHandler<ToDoDetailsQuery, Result<ToDoDetailsDto>>
 {
-    private readonly IDataContext dataContext;
-    private readonly IMapper mapper;
-
-    public ToDoDetailsQueryHandler(IDataContext dataContext, IMapper mapper)
-    {
-        this.dataContext = dataContext;
-        this.mapper = mapper;
-    }
+    private readonly IDataContext dataContext = dataContext;
+    private readonly IMapper mapper = mapper;
 
     public async Task<Result<ToDoDetailsDto>> Handle(ToDoDetailsQuery query, CancellationToken cancellationToken)
     {
@@ -29,8 +23,7 @@ public class ToDoDetailsQueryHandler : IRequestHandler<ToDoDetailsQuery, Result<
 
             var result = mapper.Map<ToDoDetailsDto>(toDo);
 
-            return Result.Ok(result!);
-
+            return Result.Ok(result);
         }
         catch (Exception ex)
         {

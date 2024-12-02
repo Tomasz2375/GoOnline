@@ -6,14 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GoOnline.Application.Commands.ToDos.Done;
 
-public class ToDoDoneCommandHandler : IRequestHandler<ToDoDoneCommand, Result>
+public class ToDoDoneCommandHandler(IDataContext dataContext) : IRequestHandler<ToDoDoneCommand, Result>
 {
-    private readonly IDataContext dataContext;
-
-    public ToDoDoneCommandHandler(IDataContext dataContext)
-    {
-        this.dataContext = dataContext;
-    }
+    private readonly IDataContext dataContext = dataContext;
 
     public async Task<Result> Handle(ToDoDoneCommand command, CancellationToken cancellationToken)
     {

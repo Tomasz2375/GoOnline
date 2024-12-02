@@ -7,25 +7,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GO.Application.Commands.ToDos.Delete;
 
-public class ToDoDeleteCommandHandler : IRequestHandler<ToDoDeleteCommand, Result>
+public class ToDoDeleteCommandHandler(IDataContext dataContext) : IRequestHandler<ToDoDeleteCommand, Result>
 {
-    private readonly IDataContext dataContext;
-
-    public ToDoDeleteCommandHandler(IDataContext dataContext)
-    {
-        this.dataContext = dataContext;
-    }
+    private readonly IDataContext dataContext = dataContext;
 
     public async Task<Result> Handle(ToDoDeleteCommand command, CancellationToken cancellationToken)
     {
         try
         {
-            ToDo toDo = new()
-            {
-                Id = command.id,
-            };
+            var toDo = dataContext
+                .Set<ToDo>()
+                .FirstAsync(x => x.Id == command.id, cancellationToken);
 
-            dataContext.Entry(toDo).State = EntityState.Deleted;
+            dataContext.Remove(toDo);
 
             await dataContext.SaveChangesAsync(cancellationToken);
 
@@ -35,6 +29,5 @@ public class ToDoDeleteCommandHandler : IRequestHandler<ToDoDeleteCommand, Resul
         {
             return Result.Fail(ex.Message);
         }
-
     }
 }

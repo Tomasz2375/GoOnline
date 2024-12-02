@@ -26,20 +26,19 @@ public class ToDoController : ControllerBase
     }
 
     [HttpGet("details/{id}")]
-    // [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<Result<ToDoDetailsDto>> GetToDoDetails(int id)
+    public async Task<Result<ToDoDetailsDto>> GetToDoDetailsAsync(int id)
     {
         return await mediator.Send(new ToDoDetailsQuery(id));
     }
 
     [HttpGet("list")]
-    public async Task<Result<List<ToDoListDto>>> GetToDosList()
+    public async Task<Result<List<ToDoListDto>>> GetToDosListAsync()
     {
         return await mediator.Send(new ToDoListQuery());
     }
 
     [HttpGet("incoming")]
-    public async Task<Result<List<ToDoListDto>>> GetToDosIncoming(TimePeriod timePeriod)
+    public async Task<Result<List<ToDoListDto>>> GetToDosIncomingAsync(TimePeriod timePeriod)
     {
         return await mediator.Send(new ToDoIncomingQuery(timePeriod));
     }
