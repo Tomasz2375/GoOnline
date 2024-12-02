@@ -7,14 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GO.Application.Commands.ToDos.Complete;
 
-public class ToDoCompleteCommandHandler : IRequestHandler<ToDoCompleteCommand, Result>
+public class ToDoCompleteCommandHandler(IDataContext dataContext) : IRequestHandler<ToDoCompleteCommand, Result>
 {
-    private readonly IDataContext dataContext;
-
-    public ToDoCompleteCommandHandler(IDataContext dataContext)
-    {
-        this.dataContext = dataContext;
-    }
+    private readonly IDataContext dataContext = dataContext;
 
     public async Task<Result> Handle(ToDoCompleteCommand command, CancellationToken cancellationToken)
     {
