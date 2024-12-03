@@ -15,7 +15,7 @@ public class ToDoDeleteCommandHandler(IDataContext dataContext) : IRequestHandle
     {
         try
         {
-            var toDo = dataContext
+            var toDo = await dataContext
                 .Set<ToDo>()
                 .FirstAsync(x => x.Id == command.id, cancellationToken);
 

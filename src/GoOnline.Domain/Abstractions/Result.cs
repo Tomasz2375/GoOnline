@@ -9,7 +9,7 @@ public class Result
     {
     }
 
-    protected Result(bool success, string error)
+    public Result(bool success, string error)
     {
         if (success && error != string.Empty)
         {
