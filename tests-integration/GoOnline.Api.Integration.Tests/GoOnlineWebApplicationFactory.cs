@@ -1,5 +1,4 @@
-﻿using GoOnline.Api.Integration.Tests.Data;
-using GoOnline.Domain.Interfaces;
+﻿using GoOnline.Domain.Interfaces;
 using GoOnline.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -8,7 +7,6 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using System.Data.Common;
 using Testcontainers.MsSql;
 
@@ -52,5 +50,6 @@ public class GoOnlineWebApplicationFactory : WebApplicationFactory<Program>, IAs
         var dataContext = scope.ServiceProvider.GetRequiredService<IDataContext>();
         await dataContext.Database.MigrateAsync();
         await dataContext.Database.EnsureCreatedAsync();
+        await dataContext.Seed();
     }
 }
