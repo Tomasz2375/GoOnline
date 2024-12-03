@@ -16,6 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82912489-DF5E-45D5-8705-8FA244B008F1}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E993DD9A-4593-4559-B9A8-9AE8214ECDAE}"
@@ -26,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Application.Tests"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Infrastructure.Tests", "tests\GoOnline.Infrastructure.Tests\GoOnline.Infrastructure.Tests.csproj", "{EA5453E7-26D1-42A2-B174-1E68EE9C9432}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoOnline.Api.Tests", "tests\GoOnline.Api.Tests\GoOnline.Api.Tests.csproj", "{3DB6B153-D633-4A0D-BFAD-A81693887E5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Api.Tests", "tests\GoOnline.Api.Tests\GoOnline.Api.Tests.csproj", "{3DB6B153-D633-4A0D-BFAD-A81693887E5D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests-integraion", "tests-integraion", "{FB77ECE3-0834-4BCA-B1D8-D33AD12CB3D2}"
 EndProject

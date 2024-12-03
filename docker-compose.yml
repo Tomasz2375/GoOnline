@@ -1,0 +1,39 @@
+networks:
+  go-network:
+    driver: bridge
+
+services:
+  goonline.api:
+    container_name: goonline.api
+    image: go_online_api:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__GoOnlineDbConnection=Server=database.server,1433;Database=GoOnlineDb;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+    build:
+      context: .
+      dockerfile: src/GoOnline.Api/Dockerfile
+    ports:
+      - 5020:8080
+    networks:
+      - go-network
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    restart: always
+    depends_on:
+      - database.server
+
+  database.server:
+    container_name: database.server
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "YourStrong!Passw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - go-network
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+volumes:
+  mssql_data:
