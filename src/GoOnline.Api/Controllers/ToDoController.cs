@@ -16,14 +16,9 @@ namespace GoOnline.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ToDoController : ControllerBase
+public class ToDoController(IMediator mediator) : ControllerBase
 {
-    private readonly IMediator mediator;
-
-    public ToDoController(IMediator mediator)
-    {
-        this.mediator = mediator;
-    }
+    private readonly IMediator mediator = mediator;
 
     [HttpGet("details/{id}")]
     public async Task<Result<ToDoDetailsDto>> GetToDoDetailsAsync(int id)
