@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Api.Tests", "tests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests-integraion", "tests-integraion", "{FB77ECE3-0834-4BCA-B1D8-D33AD12CB3D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoOnline.Api.Integration.Tests", "tests-integration\GoOnline.Api.Integration.Tests\GoOnline.Api.Integration.Tests.csproj", "{40DB1AA5-5576-4AC4-BEFB-D2C42BBAC81C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoOnline.Api.Integration.Tests", "tests-integration\GoOnline.Api.Integration.Tests\GoOnline.Api.Integration.Tests.csproj", "{40DB1AA5-5576-4AC4-BEFB-D2C42BBAC81C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

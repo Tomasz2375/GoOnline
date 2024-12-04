@@ -35,5 +35,19 @@ services:
     volumes:
       - mssql_data:/var/opt/mssql
 
+  goonline.seq:
+    container_name: goonline.seq
+    networks:
+      - go-network
+    image: datalust/seq:latest
+    depends_on:
+      - goonline.api
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5041:5341
+      - 5021:80
+
 volumes:
   mssql_data:
