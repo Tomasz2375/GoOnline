@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using GoOnline.Application.Dtos.ToDo;
+using GoOnline.Shared.Dtos.ToDo;
 
 namespace GoOnline.Application.Validators.ToDo;
 

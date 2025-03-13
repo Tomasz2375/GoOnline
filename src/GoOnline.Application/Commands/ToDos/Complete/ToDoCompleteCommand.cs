@@ -1,7 +1,7 @@
-﻿using GoOnline.Application.Dtos.ToDo;
-using GoOnline.Domain.Abstractions;
+﻿using GoOnline.Shared.Abstractions;
+using GoOnline.Shared.Dtos.ToDo;
 using MediatR;
 
-namespace GoOnline.Application.Commands.ToDos.Complete;
+namespace GoOnline.Shared.Commands.ToDos.Complete;
 
 public sealed record ToDoCompleteCommand(ToDoCompleteDto dto) : IRequest<Result>;

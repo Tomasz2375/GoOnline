@@ -1,4 +1,4 @@
-﻿namespace GoOnline.Domain.Enums;
+﻿namespace GoOnline.Shared.Enums;
 
 public enum TimePeriod
 {

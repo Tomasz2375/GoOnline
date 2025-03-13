@@ -1,8 +1,8 @@
-﻿using GoOnline.Application.Dtos.ToDo;
-using GoOnline.Domain.Abstractions;
-using GoOnline.Domain.Entities;
-using GoOnline.Domain.Enums;
+﻿using GoOnline.Domain.Entities;
 using GoOnline.Domain.Interfaces;
+using GoOnline.Shared.Abstractions;
+using GoOnline.Shared.Dtos.ToDo;
+using GoOnline.Shared.Enums;
 using MapsterMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

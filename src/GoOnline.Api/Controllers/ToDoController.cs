@@ -1,14 +1,14 @@
-﻿using GoOnline.Application.Commands.ToDos.Complete;
-using GoOnline.Application.Commands.ToDos.Create;
-using GoOnline.Application.Commands.ToDos.Delete;
+﻿using GoOnline.Application.Commands.ToDos.Delete;
 using GoOnline.Application.Commands.ToDos.Done;
 using GoOnline.Application.Commands.ToDos.Update;
-using GoOnline.Application.Dtos.ToDo;
 using GoOnline.Application.Queries.ToDos.GetDetails;
 using GoOnline.Application.Queries.ToDos.GetIncoming;
 using GoOnline.Application.Queries.ToDos.GetList;
-using GoOnline.Domain.Abstractions;
-using GoOnline.Domain.Enums;
+using GoOnline.Shared.Abstractions;
+using GoOnline.Shared.Commands.ToDos.Complete;
+using GoOnline.Shared.Commands.ToDos.Create;
+using GoOnline.Shared.Dtos.ToDo;
+using GoOnline.Shared.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

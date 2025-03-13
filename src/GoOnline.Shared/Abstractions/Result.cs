@@ -1,4 +1,4 @@
-﻿namespace GoOnline.Domain.Abstractions;
+﻿namespace GoOnline.Shared.Abstractions;
 
 public class Result
 {

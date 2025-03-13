@@ -1,9 +1,9 @@
-﻿using FluentValidation;
-using GoOnline.Application.Dtos.ToDo;
+﻿using System.Reflection;
+using FluentValidation;
 using GoOnline.Application.Validators.ToDo;
+using GoOnline.Shared.Dtos.ToDo;
 using MapsterMapper;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace GoOnline.Application;
 

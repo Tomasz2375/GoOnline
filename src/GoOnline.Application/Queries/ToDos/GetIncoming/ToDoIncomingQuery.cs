@@ -1,6 +1,6 @@
-﻿using GoOnline.Application.Dtos.ToDo;
-using GoOnline.Domain.Abstractions;
-using GoOnline.Domain.Enums;
+﻿using GoOnline.Shared.Abstractions;
+using GoOnline.Shared.Dtos.ToDo;
+using GoOnline.Shared.Enums;
 using MediatR;
 
 namespace GoOnline.Application.Queries.ToDos.GetIncoming;

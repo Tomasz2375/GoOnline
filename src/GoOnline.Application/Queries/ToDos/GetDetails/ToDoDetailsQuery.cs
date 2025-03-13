@@ -1,5 +1,5 @@
-﻿using GoOnline.Application.Dtos.ToDo;
-using GoOnline.Domain.Abstractions;
+﻿using GoOnline.Shared.Abstractions;
+using GoOnline.Shared.Dtos.ToDo;
 using MediatR;
 
 namespace GoOnline.Application.Queries.ToDos.GetDetails;

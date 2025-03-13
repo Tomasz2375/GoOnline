@@ -1,0 +1,37 @@
+﻿@page "/todos"
+@using MediatR
+@inject IMediator Mediator
+<PageTitle>ToDo</PageTitle>
+
+<h1>To Do</h1>
+
+<p>Show list of to do items</p>
+
+@if (Model is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Expire date</th>
+                <th>Complete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var toDo in Model)
+            {
+                <tr>
+                    <td>@toDo.Id</td>
+                    <td>@toDo.Title</td>
+                    <td>@toDo.ExpireDate</td>
+                    <td>@toDo.Complete</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

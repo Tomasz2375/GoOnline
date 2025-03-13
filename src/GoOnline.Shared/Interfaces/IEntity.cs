@@ -1,4 +1,4 @@
-﻿namespace GoOnline.Domain.Interfaces;
+﻿namespace GoOnline.Shared.Interfaces;
 
 public interface IEntity
 {
