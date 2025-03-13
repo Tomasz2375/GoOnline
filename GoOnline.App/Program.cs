@@ -1,3 +1,4 @@
+using System.Reflection;
 using GoOnline.App.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddMediatR(config =>
+{
+    config.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+});
+
+builder.Services.AddScoped(client => new HttpClient
+{
+    BaseAddress = new Uri("https://localhost:7099/api/"),
+});
 
 var app = builder.Build();
 
