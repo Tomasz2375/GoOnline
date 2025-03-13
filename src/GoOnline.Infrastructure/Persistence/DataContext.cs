@@ -1,4 +1,5 @@
 ﻿using GoOnline.Domain.Interfaces;
+using GoOnline.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GoOnline.Infrastructure.Persistence;

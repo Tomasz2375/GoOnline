@@ -1,7 +1,7 @@
-﻿using GoOnline.Application.Dtos.ToDo;
-using GoOnline.Domain.Abstractions;
+﻿using GoOnline.Shared.Abstractions;
+using GoOnline.Shared.Dtos.ToDo;
 using MediatR;
 
-namespace GoOnline.Application.Commands.ToDos.Create;
+namespace GoOnline.Shared.Commands.ToDos.Create;
 
 public sealed record ToDoCreateCommand(ToDoDetailsDto dto) : IRequest<Result<int>>;

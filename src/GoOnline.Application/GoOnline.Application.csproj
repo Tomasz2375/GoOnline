@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GoOnline.Domain\GoOnline.Domain.csproj" />
+    <ProjectReference Include="..\GoOnline.Shared\GoOnline.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace GoOnline.Application.Dtos.ToDo;
+﻿namespace GoOnline.Shared.Dtos.ToDo;
 
 public class ToDoDetailsDto : ToDoCompleteDto
 {

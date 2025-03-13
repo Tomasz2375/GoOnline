@@ -1,4 +1,4 @@
-﻿using GoOnline.Domain.Abstractions;
+﻿using GoOnline.Shared.Abstractions;
 using MediatR;
 
 namespace GoOnline.Application.Commands.ToDos.Done;

@@ -1,7 +1,7 @@
-﻿using GoOnline.Application.Commands.ToDos.Complete;
-using GoOnline.Domain.Abstractions;
-using GoOnline.Domain.Entities;
+﻿using GoOnline.Domain.Entities;
 using GoOnline.Domain.Interfaces;
+using GoOnline.Shared.Abstractions;
+using GoOnline.Shared.Commands.ToDos.Complete;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

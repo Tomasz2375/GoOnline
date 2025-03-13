@@ -1,4 +1,4 @@
-﻿using GoOnline.Domain.Abstractions;
+﻿using GoOnline.Shared.Abstractions;
 
 namespace GoOnline.Domain.Entities;
 

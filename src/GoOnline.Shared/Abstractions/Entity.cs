@@ -1,6 +1,6 @@
-﻿using GoOnline.Domain.Interfaces;
+﻿using GoOnline.Shared.Interfaces;
 
-namespace GoOnline.Domain.Abstractions;
+namespace GoOnline.Shared.Abstractions;
 
 public abstract class Entity : IEntity
 {

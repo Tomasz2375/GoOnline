@@ -1,6 +1,6 @@
-﻿using GoOnline.Domain.Abstractions;
-using GoOnline.Domain.Entities;
+﻿using GoOnline.Domain.Entities;
 using GoOnline.Domain.Interfaces;
+using GoOnline.Shared.Abstractions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
